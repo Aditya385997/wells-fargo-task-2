@@ -13,7 +13,7 @@ public class Security {
 
     @ManyToOne
     @Column(nullable = false)
-    private long portfolioId;
+    private Portfolio portfolioId;
 
     @Column(nullable = false)
     private String name;
@@ -32,7 +32,7 @@ public class Security {
     public Security() {
     }
 
-    public Security(long securityId, long portfolioId, String name, String category, float purchasePrice, LocalDateTime purchaseDate, int quantity) {
+    public Security(long securityId, Portfolio portfolioId, String name, String category, float purchasePrice, LocalDateTime purchaseDate, int quantity) {
         this.securityId = securityId;
         this.portfolioId = portfolioId;
         this.name = name;
@@ -50,11 +50,11 @@ public class Security {
         this.securityId = securityId;
     }
 
-    public long getPortfolioId() {
+    public Portfolio getPortfolioId() {
         return portfolioId;
     }
 
-    public void setPortfolioId(long portfolioId) {
+    public void setPortfolioId(Portfolio portfolioId) {
         this.portfolioId = portfolioId;
     }
 
