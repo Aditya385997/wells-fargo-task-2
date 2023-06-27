@@ -15,7 +15,8 @@ public class Portfolio {
     private long portfolioId;
 
     @Column(nullable = false)
-    private long clientId;
+    @ManyToOne
+    private Client clientId;
 
     @Column(nullable = false )
     @CreationTimestamp
@@ -24,7 +25,7 @@ public class Portfolio {
     public Portfolio() {
     }
 
-    public Portfolio(long portfolioId, long clientId, LocalDateTime creationDate) {
+    public Portfolio(long portfolioId, Client clientId, LocalDateTime creationDate) {
         this.portfolioId = portfolioId;
         this.clientId = clientId;
         this.creationDate = creationDate;
@@ -38,11 +39,11 @@ public class Portfolio {
         this.portfolioId = portfolioId;
     }
 
-    public long getClientId() {
+    public Client getClientId() {
         return clientId;
     }
 
-    public void setClientId(long clientId) {
+    public void setClientId(Client clientId) {
         this.clientId = clientId;
     }
 
