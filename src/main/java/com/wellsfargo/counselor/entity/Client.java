@@ -12,7 +12,7 @@ public class Client
 
     @ManyToOne
     @Column(nullable = false)
-    private long advisorId;
+    private Advisor advisorId;
     @Column(nullable = false)
     private String firstName;
     @Column(nullable = false)
@@ -31,7 +31,7 @@ public class Client
     {
 
     }
-    public Client(long clientId, long advisorId, String firstName, String lastName, String address, String phone, String email) {
+    public Client(long clientId, Advisor advisorId, String firstName, String lastName, String address, String phone, String email) {
         this.clientId = clientId;
         this.advisorId = advisorId;
         this.firstName = firstName;
@@ -49,11 +49,11 @@ public class Client
         this.clientId = clientId;
     }
 
-    public long getAdvisorId() {
+    public Advisor getAdvisorId() {
         return advisorId;
     }
 
-    public void setAdvisorId(long advisorId) {
+    public void setAdvisorId(Advisor advisorId) {
         this.advisorId = advisorId;
     }
 
